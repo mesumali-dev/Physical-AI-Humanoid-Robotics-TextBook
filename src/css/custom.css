@@ -10,10 +10,11 @@
 
   /* Custom Sidebar Colors */
   --custom-sidebar-bg-light: #87CEEB; /* Sky Blue */
-  --custom-text-black-light: #000000; /* Black for topics */
-  --custom-subheading-color: #000000; /* Black for sub-headings */
-  --custom-subheading-color-rgb: 0, 0, 0; /* RGB for black for rgba usage */
-  --custom-subheading-color-darker: #333333; /* Darker blue for border */
+  --custom-text-black-light: #2c3e50; /* Dark Blue-Grey for topics */
+  --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
+  --custom-link-hover-color: #e74c3c; /* Coral for hover */
+  --custom-link-active-color: #c0392b; /* Darker Coral for active */
+  --custom-subheading-color-rgb: 52, 73, 94; /* RGB for blue-grey for rgba usage */
 }
 
 [data-theme='dark'] {
@@ -21,8 +22,23 @@
 
   /* Custom Sidebar Colors for Dark Mode */
   --custom-sidebar-bg-dark: #87CEEB; /* Sky Blue */
-  --custom-text-black-dark: #000000; /* Black for topics in dark mode */
-  --custom-subheading-color: #000000; /* Black for dark mode sub-headings */
+  --custom-text-black-dark: #2c3e50; /* Dark Blue-Grey for topics */
+  --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
+}
+
+/*
+ * ============================================================================
+ * General Styles
+ * ============================================================================
+ */
+
+.navbar, .footer {
+  background-color: #76c3e1; /* Slightly darker sky blue */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  border-top: 1px solid #6ab8d6;
 }
 
 /*
@@ -31,16 +47,16 @@
  * ============================================================================
  */
 
-/* Sidebar container */
+/* Left Sidebar container */
 .menu {
   padding: 0.5rem;
-  background-color: var(--custom-sidebar-bg-light); /* Grey background */
+  background-color: var(--custom-sidebar-bg-light);
   border-right: 1px solid var(--ifm-toc-border-color);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] .menu {
-  background-color: var(--custom-sidebar-bg-dark); /* Dark grey background */
+  background-color: var(--custom-sidebar-bg-dark);
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -51,51 +67,83 @@
   font-weight: 500;
   padding-left: 1rem;
   margin-bottom: 0.1rem;
-  color: inherit;
 }
 
 /* Main topics (top-level links) */
 .menu__list > .menu__list-item > .menu__link {
-  color: var(--custom-text-black-light); /* Black for main topics */
+  color: var(--custom-text-black-light);
+  font-size: 1.1rem; /* Increased font size */
+  font-weight: 700;
 }
 
 [data-theme='dark'] .menu__list > .menu__list-item > .menu__link {
   color: var(--custom-text-black-dark);
 }
 
-
 /* Sub-headings (nested links) */
 .menu__list-item .menu__list-item > .menu__link {
-  color: var(--custom-subheading-color); /* Deep Blue for sub-headings */
+  color: var(--custom-subheading-color);
+  font-size: 1rem;
 }
 
 /* Hover effect for all links */
 .menu__link:hover {
-  background-color: rgba(var(--custom-subheading-color-rgb), 0.1); /* Light blue tint on hover */
+  background-color: rgba(var(--custom-subheading-color-rgb), 0.1);
+  color: var(--custom-link-hover-color);
 }
-
 
 /* Active link styling */
 .menu__link--active {
-  color: white; /* White text for active link */
-  background-color: var(--custom-subheading-color); /* Deep Blue background */
-  border-left: 4px solid var(--custom-subheading-color-darker); /* Darker blue border */
+  color: white;
+  background-color: var(--custom-link-active-color);
+  border-left: 4px solid var(--custom-link-active-color);
   font-weight: 700;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Don't apply the same background to active category parents */
 .menu__list-item--collapsed .menu__link--active {
     background-color: transparent;
-    color: var(--custom-subheading-color); /* Show blue for active collapsed parent */
+    color: var(--custom-link-active-color);
     box-shadow: none;
     border-left-color: transparent;
 }
 
 
 [data-theme='dark'] .menu__link--active {
-  color: #e9ecef;
-  background-color: var(--custom-subheading-color);
-  border-left-color: var(--custom-subheading-color);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  color: white;
+  background-color: var(--custom-link-active-color);
+  border-left-color: var(--custom-link-active-color);
+}
+
+/*
+ * ============================================================================
+ * Right Sidebar (Table of Contents) Styles
+ * ============================================================================
+ */
+
+.theme-doc-toc-desktop {
+  background-color: #f0f8ff; /* Alice Blue */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.theme-doc-toc-desktop .toc-heading {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.theme-doc-toc-desktop .table-of-contents a {
+  color: #34495e;
+}
+
+.theme-doc-toc-desktop .table-of-contents a:hover {
+  color: #e74c3c;
+}
+
+.theme-doc-toc-desktop .table-of-contents .toc-link--active {
+  color: #c0392b;
+  font-weight: 700;
 }
