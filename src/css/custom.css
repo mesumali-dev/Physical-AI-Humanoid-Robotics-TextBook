@@ -1,0 +1,101 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom Sidebar Colors */
+  --custom-sidebar-bg-light: #87CEEB; /* Sky Blue */
+  --custom-text-black-light: #FFD700; /* Gold for topics */
+  --custom-subheading-color: #FFD700; /* Gold for sub-headings */
+  --custom-subheading-color-rgb: 255, 215, 0; /* RGB for gold for rgba usage */
+  --custom-subheading-color-darker: #333333; /* Darker blue for border */
+}
+
+[data-theme='dark'] {
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom Sidebar Colors for Dark Mode */
+  --custom-sidebar-bg-dark: #87CEEB; /* Sky Blue */
+  --custom-text-black-dark: #FFD700; /* Gold for topics in dark mode */
+  --custom-subheading-color: #FFD700; /* Gold for dark mode sub-headings */
+}
+
+/*
+ * ============================================================================
+ * Custom Sidebar Styles
+ * ============================================================================
+ */
+
+/* Sidebar container */
+.menu {
+  padding: 0.5rem;
+  background-color: var(--custom-sidebar-bg-light); /* Grey background */
+  border-right: 1px solid var(--ifm-toc-border-color);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .menu {
+  background-color: var(--custom-sidebar-bg-dark); /* Dark grey background */
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* All links in the sidebar */
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  padding-left: 1rem;
+  margin-bottom: 0.1rem;
+  color: inherit;
+}
+
+/* Main topics (top-level links) */
+.menu__list > .menu__list-item > .menu__link {
+  color: var(--custom-text-black-light); /* Black for main topics */
+}
+
+[data-theme='dark'] .menu__list > .menu__list-item > .menu__link {
+  color: var(--custom-text-black-dark);
+}
+
+
+/* Sub-headings (nested links) */
+.menu__list-item .menu__list-item > .menu__link {
+  color: var(--custom-subheading-color); /* Deep Blue for sub-headings */
+}
+
+/* Hover effect for all links */
+.menu__link:hover {
+  background-color: rgba(var(--custom-subheading-color-rgb), 0.1); /* Light blue tint on hover */
+}
+
+
+/* Active link styling */
+.menu__link--active {
+  color: white; /* White text for active link */
+  background-color: var(--custom-subheading-color); /* Deep Blue background */
+  border-left: 4px solid var(--custom-subheading-color-darker); /* Darker blue border */
+  font-weight: 700;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Don't apply the same background to active category parents */
+.menu__list-item--collapsed .menu__link--active {
+    background-color: transparent;
+    color: var(--custom-subheading-color); /* Show blue for active collapsed parent */
+    box-shadow: none;
+    border-left-color: transparent;
+}
+
+
+[data-theme='dark'] .menu__link--active {
+  color: #e9ecef;
+  background-color: var(--custom-subheading-color);
+  border-left-color: var(--custom-subheading-color);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
