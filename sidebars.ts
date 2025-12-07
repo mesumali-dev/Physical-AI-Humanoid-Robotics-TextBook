@@ -75,13 +75,13 @@ const sidebars: SidebarsConfig = {
 
   // But you can create a sidebar manually
   /*
-  tutorialSidebar: [
+  textbookSidebar: [
     'intro',
     'hello',
     {
       type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
+      label: 'Textbook',
+      items: ['textbook-basics/create-a-document'],
     },
   ],
    */

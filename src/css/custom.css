@@ -8,22 +8,30 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* Custom Sidebar Colors */
-  --custom-sidebar-bg-light: #808080; /* Grey */
-  --custom-text-black-light: #000000; /* Dark Black for topics */
-  --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
-  --custom-link-hover-color: #e74c3c; /* Coral for hover */
-  --custom-link-active-color: #c0392b; /* Darker Coral for active */
-  --custom-subheading-color-rgb: 52, 73, 94; /* RGB for blue-grey for rgba usage */
+  /* New Color Palette - Light Mode */
+  --sidebar-bg-color: #f7fafc; /* Light background */
+  --sidebar-text-color: #2d3748; /* Dark text */
+  --sidebar-accent-color: #4299e1; /* Primary blue */
+  --sidebar-hover-bg: #edf2f7; /* Lighter hover background */
+  --sidebar-active-bg: #4299e1; /* Primary blue for active background */
+  --sidebar-active-text: #ffffff; /* White text for active */
+  --sidebar-border-color: #e2e8f0; /* Light border */
+  --sidebar-shadow-color: rgba(0, 0, 0, 0.08);
 }
 
+/* Dark Mode */
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  /* Custom Sidebar Colors for Dark Mode */
-  --custom-sidebar-bg-dark: #808080; /* Grey */
-  --custom-text-black-dark: #000000; /* Dark Black for topics */
-  --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
+  /* New Color Palette - Dark Mode */
+  --sidebar-bg-color: #1a202c; /* Dark charcoal background */
+  --sidebar-text-color: #e2e8f0; /* Light text */
+  --sidebar-accent-color: #63b3ed; /* Lighter blue for dark mode primary */
+  --sidebar-hover-bg: #2d3748; /* Darker hover background */
+  --sidebar-active-bg: #63b3ed; /* Lighter blue for dark mode active background */
+  --sidebar-active-text: #ffffff; /* White text for active in dark mode */
+  --sidebar-border-color: #2d3748; /* Darker border */
+  --sidebar-shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -33,17 +41,17 @@
  */
 
 .navbar, .footer {
-  background-color: #808080; /* Grey */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--sidebar-bg-color);
+  box-shadow: 0 2px 10px var(--sidebar-shadow-color);
 }
 
 .footer {
-  border-top: 1px solid #6ab8d6;
+  border-top: 1px solid var(--sidebar-border-color);
 }
 
 .navbar__link,
 .navbar__brand {
-  color: #000000; /* Black */
+  color: var(--sidebar-text-color);
 }
 
 /*
@@ -54,71 +62,69 @@
 
 /* Left Sidebar container */
 .menu {
-  padding: 0.5rem;
-  background-color: var(--custom-sidebar-bg-light);
-  border-right: 1px solid var(--ifm-toc-border-color);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme='dark'] .menu {
-  background-color: var(--custom-sidebar-bg-dark);
-  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 1rem; /* More generous padding */
+  background-color: var(--sidebar-bg-color);
+  border-right: 1px solid var(--sidebar-border-color);
+  box-shadow: 2px 0 15px var(--sidebar-shadow-color);
+  border-radius: 0 10px 10px 0; /* Rounded right corners */
 }
 
 /* All links in the sidebar */
 .menu__link {
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  border-radius: 8px; /* Softer corners for links */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* More sophisticated ease */
   font-weight: 500;
-  padding-left: 1rem;
-  margin-bottom: 0.1rem;
+  padding: 0.8rem 1.2rem; /* Adjusted padding */
+  margin-bottom: 0.3rem; /* More spacing between items */
+  color: var(--sidebar-text-color);
+  letter-spacing: 0.02em; /* Slight letter spacing */
+  position: relative;
+  overflow: hidden; /* For background animation */
 }
 
 /* Main topics (top-level links) */
 .menu__list > .menu__list-item > .menu__link {
-  color: var(--custom-text-black-light);
-  font-size: 1.1rem; /* Increased font size */
-  font-weight: 700;
-}
-
-[data-theme='dark'] .menu__list > .menu__list-item > .menu__link {
-  color: var(--custom-text-black-dark);
+  font-size: 1.1rem; /* Adjusted font size */
+  font-weight: 600; /* Slightly bolder */
+  color: var(--sidebar-text-color);
+  margin-bottom: 0.7rem; /* More space below main topics */
+  border-bottom: 1px solid var(--sidebar-border-color); /* Subtle separator */
+  padding-bottom: 0.7rem;
 }
 
 /* Sub-headings (nested links) */
 .menu__list-item .menu__list-item > .menu__link {
-  color: var(--custom-subheading-color);
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller for sub-items */
+  padding-left: 2rem; /* Further indentation */
+  color: var(--sidebar-text-color);
 }
 
 /* Hover effect for all links */
 .menu__link:hover {
-  background-color: rgba(var(--custom-subheading-color-rgb), 0.1);
-  color: var(--custom-link-hover-color);
+  background-color: var(--sidebar-hover-bg);
+  color: var(--sidebar-accent-color);
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 8px var(--sidebar-shadow-color); /* Deeper shadow on hover */
 }
 
 /* Active link styling */
 .menu__link--active {
-  color: white;
-  background-color: var(--custom-link-active-color);
-  border-left: 4px solid var(--custom-link-active-color);
+  color: var(--sidebar-active-text);
+  background-color: var(--sidebar-active-bg);
+  border-left: 6px solid var(--sidebar-accent-color); /* Bolder active indicator */
   font-weight: 700;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(0); /* Ensure no lift for active */
+  border-radius: 0 8px 8px 0; /* Rounded right corners only */
 }
 
 .menu__list-item--collapsed .menu__link--active {
     background-color: transparent;
-    color: var(--custom-link-active-color);
+    color: var(--sidebar-active-text);
     box-shadow: none;
     border-left-color: transparent;
 }
 
-
-[data-theme='dark'] .menu__link--active {
-  color: white;
-  background-color: var(--custom-link-active-color);
-  border-left-color: var(--custom-link-active-color);
-}
 
 /*
  * ============================================================================
@@ -127,28 +133,33 @@
  */
 
 .theme-doc-toc-desktop {
-  background-color: #808080; /* Grey */
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  background-color: var(--sidebar-bg-color);
+  padding: 1.8rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: -2px 0 15px var(--sidebar-shadow-color);
 }
 
 .theme-doc-toc-desktop .toc-heading {
-  color: #000000; /* Black */
-  font-size: 1.2rem;
+  color: var(--sidebar-text-color);
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
 }
 
 .theme-doc-toc-desktop .table-of-contents a {
-  color: #000000; /* Black */
+  color: var(--sidebar-text-color);
+  transition: color 0.3s ease;
+  padding: 0.3rem 0;
+  display: block;
 }
 
 .theme-doc-toc-desktop .table-of-contents a:hover {
-  color: #333333; /* Darker Grey for hover */
+  color: var(--sidebar-accent-color);
+  transform: translateX(3px);
 }
 
 .theme-doc-toc-desktop .table-of-contents .toc-link--active {
-  color: #e74c3c; /* Coral - keeping this as it is a distinct highlight */
-  font-weight: 700;
+  color: var(--sidebar-accent-color);
+  font-weight: 600;
 }

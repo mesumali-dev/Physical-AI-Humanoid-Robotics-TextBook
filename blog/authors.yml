@@ -23,3 +23,14 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+syedmesumali:
+  name: Syed Mesum Ali Shah
+  title: Author
+  url: https://www.linkedin.com/in/mesumali-dev/
+  image_url: # Add actual image URL if available
+  page: true
+  socials:
+    x: # Add X handle if available
+    linkedin: mesumali-dev
+    github: mesumali-dev
