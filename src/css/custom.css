@@ -10,9 +10,9 @@
 
   /* Custom Sidebar Colors */
   --custom-sidebar-bg-light: #87CEEB; /* Sky Blue */
-  --custom-text-black-light: #FFD700; /* Gold for topics */
-  --custom-subheading-color: #FFD700; /* Gold for sub-headings */
-  --custom-subheading-color-rgb: 255, 215, 0; /* RGB for gold for rgba usage */
+  --custom-text-black-light: #000000; /* Black for topics */
+  --custom-subheading-color: #000000; /* Black for sub-headings */
+  --custom-subheading-color-rgb: 0, 0, 0; /* RGB for black for rgba usage */
   --custom-subheading-color-darker: #333333; /* Darker blue for border */
 }
 
@@ -21,8 +21,8 @@
 
   /* Custom Sidebar Colors for Dark Mode */
   --custom-sidebar-bg-dark: #87CEEB; /* Sky Blue */
-  --custom-text-black-dark: #FFD700; /* Gold for topics in dark mode */
-  --custom-subheading-color: #FFD700; /* Gold for dark mode sub-headings */
+  --custom-text-black-dark: #000000; /* Black for topics in dark mode */
+  --custom-subheading-color: #000000; /* Black for dark mode sub-headings */
 }
 
 /*
