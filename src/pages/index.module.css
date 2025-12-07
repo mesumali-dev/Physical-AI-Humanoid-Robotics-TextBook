@@ -16,8 +16,29 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
+.hero__subtitle__animated {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation:
+    typing 3.5s steps(40, end) forwards;
+}
+
+.buttonAnimated {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttonAnimated:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
