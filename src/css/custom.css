@@ -9,8 +9,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Custom Sidebar Colors */
-  --custom-sidebar-bg-light: #87CEEB; /* Sky Blue */
-  --custom-text-black-light: #2c3e50; /* Dark Blue-Grey for topics */
+  --custom-sidebar-bg-light: #808080; /* Grey */
+  --custom-text-black-light: #000000; /* Dark Black for topics */
   --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
   --custom-link-hover-color: #e74c3c; /* Coral for hover */
   --custom-link-active-color: #c0392b; /* Darker Coral for active */
@@ -21,8 +21,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* Custom Sidebar Colors for Dark Mode */
-  --custom-sidebar-bg-dark: #87CEEB; /* Sky Blue */
-  --custom-text-black-dark: #2c3e50; /* Dark Blue-Grey for topics */
+  --custom-sidebar-bg-dark: #808080; /* Grey */
+  --custom-text-black-dark: #000000; /* Dark Black for topics */
   --custom-subheading-color: #34495e; /* Lighter Blue-Grey for sub-headings */
 }
 
@@ -33,12 +33,17 @@
  */
 
 .navbar, .footer {
-  background-color: #76c3e1; /* Slightly darker sky blue */
+  background-color: #808080; /* Grey */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .footer {
   border-top: 1px solid #6ab8d6;
+}
+
+.navbar__link,
+.navbar__brand {
+  color: #000000; /* Black */
 }
 
 /*
@@ -122,28 +127,28 @@
  */
 
 .theme-doc-toc-desktop {
-  background-color: #f0f8ff; /* Alice Blue */
+  background-color: #808080; /* Grey */
   padding: 1rem;
   border-radius: 8px;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .theme-doc-toc-desktop .toc-heading {
-  color: #2c3e50;
+  color: #000000; /* Black */
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .theme-doc-toc-desktop .table-of-contents a {
-  color: #34495e;
+  color: #000000; /* Black */
 }
 
 .theme-doc-toc-desktop .table-of-contents a:hover {
-  color: #e74c3c;
+  color: #333333; /* Darker Grey for hover */
 }
 
 .theme-doc-toc-desktop .table-of-contents .toc-link--active {
-  color: #c0392b;
+  color: #e74c3c; /* Coral - keeping this as it is a distinct highlight */
   font-weight: 700;
 }
