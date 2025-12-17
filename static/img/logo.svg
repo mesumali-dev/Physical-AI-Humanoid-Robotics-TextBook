@@ -1,0 +1,50 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for light mode -->
+    <linearGradient id="bookGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9c27b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ab47bc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradient for dark mode -->
+    <linearGradient id="bookGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e1bee7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1c4e9;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Book shape clip path -->
+    <clipPath id="bookClip">
+      <path d="M20 15 L80 15 L80 85 L20 85 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Book outline -->
+  <path d="M20 15 L80 15 L80 85 L20 85 Z" fill="white" stroke="url(#bookGradientLight)" stroke-width="3"/>
+
+  <!-- Book spine -->
+  <rect x="15" y="15" width="5" height="70" rx="1" fill="url(#bookGradientLight)" />
+
+  <!-- Pages effect -->
+  <path d="M25 20 L75 20 L75 80 L25 80 Z" fill="none" stroke="url(#bookGradientLight)" stroke-width="1" opacity="0.3"/>
+  <path d="M30 25 L70 25 L70 75 L30 75 Z" fill="none" stroke="url(#bookGradientLight)" stroke-width="1" opacity="0.3"/>
+
+  <!-- Knowledge symbol - stylized "K" inside the book -->
+  <g clip-path="url(#bookClip)" transform="translate(35, 30)">
+    <path d="M0 0 L0 30 M0 15 L15 0 M15 0 L15 30" fill="none" stroke="url(#bookGradientLight)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Dark mode version using CSS -->
+  <style>
+    [data-theme="dark"] & {
+      path:not(:first-child) {
+        stroke: url(#bookGradientDark);
+      }
+      g path {
+        stroke: url(#bookGradientDark);
+      }
+      rect {
+        fill: url(#bookGradientDark);
+      }
+    }
+  </style>
+</svg>
