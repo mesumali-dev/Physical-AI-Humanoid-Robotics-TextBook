@@ -4,8 +4,8 @@
 
 // Base URL for the backend API - this should be configured based on environment
 const API_BASE_URL = typeof window !== 'undefined'
-  ? (window.ENV?.REACT_APP_API_BASE_URL || 'http://localhost:8000/api/v1')
-  : 'http://localhost:8000/api/v1'|| "https://mesum-ali-physical-ai-humanoid-robotics-textbook.hf.space/api/v1";
+  ? (window.ENV?.REACT_APP_API_BASE_URL || 'https://mesum-ali-physical-ai-humanoid-robotics-textbook.hf.space/api/v1')
+  : 'http://localhost:8000/api/v1';
 
 class ChatbotService {
   /**
@@ -32,7 +32,7 @@ class ChatbotService {
         requestBody.selectedText = selectedText;
       }
 
-      const response = await fetch(`https://mesum-ali-physical-ai-humanoid-robotics-textbook.hf.space/api/v1/query`, {
+      const response = await fetch(`${API_BASE_URL}/query`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
