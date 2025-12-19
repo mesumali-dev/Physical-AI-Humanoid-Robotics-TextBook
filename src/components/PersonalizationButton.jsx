@@ -20,6 +20,16 @@ const PersonalizationButton = ({ chapterId, chapterElement, userProfile }) => {
     setShowButton(true);
   }, []);
 
+  // Use effective user profile (either provided or default)
+  const hasUserProfile = !!userProfile;
+  const effectiveUserProfile = userProfile || {
+    id: 'guest',
+    knowledge_level: 'intermediate',
+    software_background: 'General software development',
+    hardware_background: 'General hardware knowledge',
+    profile_complete: true
+  };
+
   // Handle personalization request
   const handlePersonalize = async () => {
     let targetElement = chapterElement;
@@ -145,14 +155,6 @@ const PersonalizationButton = ({ chapterId, chapterElement, userProfile }) => {
 
   // Always show personalization controls - no authentication required
   // Use default user profile if none provided
-  const hasUserProfile = !!userProfile;
-  const effectiveUserProfile = userProfile || {
-    id: 'guest',
-    knowledge_level: 'intermediate',
-    software_background: 'General software development',
-    hardware_background: 'General hardware knowledge',
-    profile_complete: true
-  };
 
   return (
     <div className="personalization-controls">
